@@ -37,7 +37,6 @@ app.use(passport.session());
 app.use(flash());
 
 // Set up routes and pass in configured passport
-//require('./routes/index.js')(app, passport);
 require('./routes/index.js')(app);
 require('./routes/auth.js')(app, passport);
 
