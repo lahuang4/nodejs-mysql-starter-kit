@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile</title>
+    {{> head}}
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header text-center">
+        <h1>Profile</h1>
+        <a href="/logout" class="btn btn-info">Logout</a>
+      </div>
+
+      <div class="well">
+        <p><strong>User ID</strong>: {{ user.id }}</p>
+        <p><strong>Email</strong>: {{ user.email }}</p>
+      </div>
+    </div>
+  </body>
+</html>
