@@ -90,5 +90,24 @@ var login = function(req, email, password, callback) {
   });
 };
 
+// List all users
+// callback(err, users)
+var listUsers = function(callback) {
+  db.query('SELECT * FROM users', [], function(err, rows) {
+    if (err)
+      return callback(err);
+
+    return callback(null, rows);
+  });
+};
+
+// Delete a user
+// callback(err)
+var deleteUser = function(id, callback) {
+  db.query('DELETE FROM users WHERE id = ?', [id], callback);
+};
+
 exports.signup = signup;
 exports.login = login;
+exports.listUsers = listUsers;
+exports.deleteUser = deleteUser;
