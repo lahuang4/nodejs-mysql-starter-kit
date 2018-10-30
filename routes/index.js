@@ -17,7 +17,7 @@ module.exports = function(app) {
 
   });
 
-  app.get('/admin', auth.requireLogin, function(req, res, next) {
+  app.get('/admin', auth.requireLogin, auth.requireAdmin, function(req, res, next) {
 
     user.listUsers(function(err, rows) {
       var users = [];
@@ -32,7 +32,7 @@ module.exports = function(app) {
 
   });
 
-  app.get('/delete/user/:id', auth.requireLogin, function(req, res, next) {
+  app.get('/delete/user/:id', auth.requireLogin, auth.requireAdmin, function(req, res, next) {
 
     if (req.user.id === req.params.id) {
       // If the user is trying to delete their own account, log them out first
