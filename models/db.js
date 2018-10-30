@@ -21,6 +21,8 @@ var getConnection = function(callback) {
 // callback(err, rows)
 var query = function(queryString, params, callback) {
   getConnection(function(err, conn) {
+    if (err)
+      return callback(err);
     conn.query(queryString, params, function(err, rows) {
       conn.release();
 
