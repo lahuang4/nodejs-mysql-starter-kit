@@ -20,4 +20,4 @@ There aren't that many resources out there for using a SQL database with Node.js
 This starter kit comes with local user authentication. The user authentication is roughly based off of [this tutorial](https://scotch.io/tutorials/easy-node-authentication-setup-and-local). There is a User class in [models/user.js](../blob/master/models/user.js) and new users are furnished with a UUID instead of the default MySQL ascending object ids.
 
 ## User administration
-Basic user administration (viewing and deleting users) is accessible at the `/admin` path.
+Basic user administration (viewing and deleting users) is accessible at the `/admin` path. This path is only visible to users with the `admin` property (in the users database), which you can set with direct database access.

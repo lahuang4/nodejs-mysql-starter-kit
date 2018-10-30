@@ -12,7 +12,8 @@ conn.query('\
   CREATE TABLE `' + dbconfig.database + '`.`users` ( \
     `id` CHAR(36) NOT NULL PRIMARY KEY, \
     `email` VARCHAR(255) NOT NULL, \
-    `password` CHAR(60) NOT NULL \
+    `password` CHAR(60) NOT NULL, \
+    `admin` BOOLEAN NOT NULL DEFAULT 0 \
   )');
 
 console.log('Success! Database created.');
